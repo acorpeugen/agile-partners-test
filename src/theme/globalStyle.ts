@@ -9,10 +9,6 @@ const GlobalStyle = createGlobalStyle`
   */
   ${reset}
 
-  html {
-    scroll-behavior: smooth;
-  }
-
   body {
     min-height: 100vh;
     font-family: 'Montserrat', sans-serif;
