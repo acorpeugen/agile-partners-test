@@ -9,4 +9,3 @@ export { LineSvg } from './LineSvg';
 export { ArrowDownSvg } from './ArrowDownSvg';
 
 export { Home } from './Home';
-export { Banks } from './Banks';
