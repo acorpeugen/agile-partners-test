@@ -9,6 +9,10 @@ const GlobalStyle = createGlobalStyle`
   */
   ${reset}
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     min-height: 100vh;
     font-family: 'Montserrat', sans-serif;
@@ -23,7 +27,8 @@ const GlobalStyle = createGlobalStyle`
   h1,
   h2,
   h3,
-  h4 {
+  h4,
+  h5 {
     line-height: 1.2;
     font-weight: 600;
   }
@@ -44,8 +49,24 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.5rem;
   }
 
+  h5 {
+    font-size: 1.25rem;
+  }
+
   .text-center {
     text-align: center;
+  }
+
+  .position-sticky {
+    position: sticky;
+  }
+
+  .position-absolute {
+    position: absolute;
+  }
+
+  .z-index-1 {
+    z-index: 1;
   }
 `;
 
