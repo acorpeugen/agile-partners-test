@@ -9,15 +9,18 @@ export interface ArrowDownSvgProps {
   width?: number;
   height?: number;
   fill?: string;
+  className?: string;
 }
 
 const ArrowDownSvg = ({
   width = 12,
   height = 24,
   fill = '#fff',
+  className,
 }: ArrowDownSvgProps) => {
   return (
     <ArrowDownStyled
+      {...{ className }}
       fill="none"
       {...{ width, height }}
       viewBox="0 0 12 24"
