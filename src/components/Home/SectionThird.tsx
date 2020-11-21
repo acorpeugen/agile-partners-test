@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
-import { gsap } from 'gsap';
+import { gsap, Power0 } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 import { H3 } from './../../theme';
@@ -84,7 +84,7 @@ const SectionThird = () => {
         const sectionThirdAnimation = gsap.timeline({
           scrollTrigger: {
             trigger: '.section-third-js',
-            start: 'top 20%',
+            start: 'top 50%',
             end: 'bottom bottom',
             scrub: 1,
           },
@@ -99,34 +99,15 @@ const SectionThird = () => {
             {
               backgroundImage:
                 'linear-gradient(243.7deg, rgba(12, 81, 206, 0.82) 4.24%, #000 97.67%)',
-              duration: 1,
             }
           )
           .fromTo(
-            [title],
-            { opacity: 0, y: 200 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 1,
-            }
-          )
-          .fromTo(
-            [content],
+            [title, content, subtitle, button],
             { opacity: 0, y: 100 },
             {
               opacity: 1,
               y: 0,
-              duration: 1,
-            }
-          )
-          .fromTo(
-            [subtitle, button],
-            { opacity: 0, y: 100 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 1,
+              stagger: 0.3,
             }
           );
       },
