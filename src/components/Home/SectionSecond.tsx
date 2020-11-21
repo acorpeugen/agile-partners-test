@@ -152,58 +152,42 @@ const SectionSecond = () => {
     );
     ScrollTrigger.matchMedia({
       '(min-width: 992px)': function () {
-        const textAnimation = gsap.timeline({
-          scrollTrigger: {
-            trigger: '.container-js',
-            start: 'top 50%',
-            end: 'bottom bottom',
-            scrub: true,
-          },
+        gsap.set([title, subtitle, line, map, tooltip], {
+          opacity: 0,
+          ease: 'sine.inOut',
         });
-        textAnimation
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: '.container-js',
+              start: 'top 50%',
+              end: 'bottom bottom',
+              scrub: true,
+            },
+          })
           .fromTo(
             title,
-            { opacity: 0, y: vh, fontSize: '3.125em' },
+            { y: vh, fontSize: '3.125em' },
             {
+              duration: 4,
               opacity: 1,
-              y: 0,
               fontSize: '2.5em',
-              duration: 3,
+              y: 0,
             }
           )
           .fromTo(
             subtitle,
-            { opacity: 0, y: vh, fontSize: '1.875em' },
+            { y: vh, fontSize: '1.875em' },
             {
               opacity: 1,
               fontSize: '1.5625em',
               y: 0,
-              duration: 3,
+              duration: 4,
             },
-            '-=3'
-          );
-
-        // Map, Line SVG and tooltips scroll animation
-        const mapAnimation = gsap.timeline({
-          scrollTrigger: {
-            trigger: '.container-js',
-            start: 'top 50%',
-            end: 'bottom bottom',
-            scrub: true,
-          },
-        });
-
-        mapAnimation
-          .fromTo(
-            [line, map],
-            { opacity: 0, y: 100 },
-            { opacity: 1, y: 0, duration: 3, delay: 3 }
+            '-=4'
           )
-          .fromTo(
-            tooltip,
-            { opacity: 0 },
-            { opacity: 1, stagger: 1, duration: 2 }
-          );
+          .fromTo([line, map], { y: 100 }, { opacity: 1, y: 0, duration: 2 })
+          .fromTo(tooltip, {}, { opacity: 1, stagger: 1 });
       },
     });
   }, []);

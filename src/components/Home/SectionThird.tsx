@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
-import { gsap, Power0 } from 'gsap';
+import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 import { H3 } from './../../theme';
@@ -81,15 +81,15 @@ const SectionThird = () => {
 
     ScrollTrigger.matchMedia({
       '(min-width: 992px)': function () {
-        const sectionThirdAnimation = gsap.timeline({
-          scrollTrigger: {
-            trigger: '.section-third-js',
-            start: 'top 50%',
-            end: 'bottom bottom',
-            scrub: 1,
-          },
-        });
-        sectionThirdAnimation
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: '.section-third-js',
+              start: 'top 50%',
+              end: 'bottom bottom',
+              scrub: 1,
+            },
+          })
           .fromTo(
             section,
             {
