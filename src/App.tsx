@@ -20,7 +20,7 @@ function App() {
     preloaderAnimation.to(
       [preloader, loader],
       { opacity: 0, duration: 1 },
-      '+=1'
+      '+=1.5'
     );
   }, []);
 
