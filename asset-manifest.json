@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/agile-partners-test/static/js/main.5c9516b1.chunk.js",
-    "main.js.map": "/agile-partners-test/static/js/main.5c9516b1.chunk.js.map",
+    "main.js": "/agile-partners-test/static/js/main.574a8246.chunk.js",
+    "main.js.map": "/agile-partners-test/static/js/main.574a8246.chunk.js.map",
     "runtime-main.js": "/agile-partners-test/static/js/runtime-main.22d218ad.js",
     "runtime-main.js.map": "/agile-partners-test/static/js/runtime-main.22d218ad.js.map",
     "static/js/2.940cd4a8.chunk.js": "/agile-partners-test/static/js/2.940cd4a8.chunk.js",
@@ -10,12 +10,16 @@
     "static/js/3.1a060313.chunk.js.map": "/agile-partners-test/static/js/3.1a060313.chunk.js.map",
     "index.html": "/agile-partners-test/index.html",
     "static/js/2.940cd4a8.chunk.js.LICENSE.txt": "/agile-partners-test/static/js/2.940cd4a8.chunk.js.LICENSE.txt",
+    "static/media/arrow-down.a3ef568a.svg": "/agile-partners-test/static/media/arrow-down.a3ef568a.svg",
     "static/media/arrow-right.968e2a34.svg": "/agile-partners-test/static/media/arrow-right.968e2a34.svg",
+    "static/media/burger.1583b894.svg": "/agile-partners-test/static/media/burger.1583b894.svg",
+    "static/media/favicon.83c4b96e.svg": "/agile-partners-test/static/media/favicon.83c4b96e.svg",
     "static/media/footer-lg.5bc04f68.jpg": "/agile-partners-test/static/media/footer-lg.5bc04f68.jpg",
     "static/media/footer-md.e9eb7f1b.jpg": "/agile-partners-test/static/media/footer-md.e9eb7f1b.jpg",
     "static/media/footer-sm.bdb01ae3.jpg": "/agile-partners-test/static/media/footer-sm.bdb01ae3.jpg",
     "static/media/footer-xl.424ab9e9.jpg": "/agile-partners-test/static/media/footer-xl.424ab9e9.jpg",
     "static/media/footer.34ac1dd5.jpg": "/agile-partners-test/static/media/footer.34ac1dd5.jpg",
+    "static/media/line.97efbc04.svg": "/agile-partners-test/static/media/line.97efbc04.svg",
     "static/media/logo.5e47abcc.svg": "/agile-partners-test/static/media/logo.5e47abcc.svg",
     "static/media/map.20a32206.svg": "/agile-partners-test/static/media/map.20a32206.svg",
     "static/media/section-lg.fc8f8f66.jpg": "/agile-partners-test/static/media/section-lg.fc8f8f66.jpg",
@@ -27,6 +31,6 @@
   "entrypoints": [
     "static/js/runtime-main.22d218ad.js",
     "static/js/2.940cd4a8.chunk.js",
-    "static/js/main.5c9516b1.chunk.js"
+    "static/js/main.574a8246.chunk.js"
   ]
 }
