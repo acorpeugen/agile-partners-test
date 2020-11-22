@@ -46,10 +46,19 @@ const Span = styled.span`
 `;
 
 const SectionThirdTitle = styled(H3)`
-  padding-top: 140px;
-  margin-bottom: 130px;
+  padding-top: 50px;
+  margin-bottom: 50px;
   max-width: 988px;
   color: ${(props) => props.theme.colors.primary};
+
+  @media (min-width: ${(props) => props.theme.breakpoint.up_992}) {
+    padding-top: 140px;
+    margin-bottom: 130px;
+
+    .section-third__btn-js {
+      margin-bottom: 0;
+    }
+  }
 `;
 
 const P = styled.p`
@@ -65,6 +74,10 @@ const H5 = styled.h5`
   margin-bottom: 58px;
   color: ${(props) => props.theme.colors.white};
   line-height: 1.6;
+`;
+
+const Button = styled(ButtonLinkPrimary)`
+  margin-bottom: 30px;
 `;
 
 const SectionThird = () => {
@@ -141,12 +154,12 @@ const SectionThird = () => {
           with transparent and communally shared KYB, source of funds and
           economic legitimacy of payments.
         </H5>
-        <ButtonLinkPrimary to="/" className="section-third__btn-js">
+        <Button to="/" className="section-third__btn-js">
           Learn More
           <Icon marginLeft="30px">
             <img src={arrowRight} alt="arrow-right" />
           </Icon>
-        </ButtonLinkPrimary>
+        </Button>
       </Container>
       <Footer />
     </SectionStyled>
