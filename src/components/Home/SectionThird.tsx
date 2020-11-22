@@ -82,15 +82,13 @@ const Button = styled(ButtonLinkPrimary)`
 
 const SectionThird = () => {
   useEffect(() => {
-    const section = document.querySelector('.section-third__span-js');
+    const span = document.querySelector('.section-third__span-js');
     const title = document.querySelector('.section-third__title-js');
     const content = document.querySelector('.section-third__content-js');
     const subtitle = document.querySelector('.section-third__subtitle-js');
     const button = document.querySelector('.section-third__btn-js');
 
-    ScrollTrigger.saveStyles(
-      '.section-third__span-js, .section-third__title-js, section-third__content-js, .section-third__subtitle-js, .section-third__btn-js'
-    );
+    ScrollTrigger.saveStyles([span, title, content, subtitle, button]);
 
     ScrollTrigger.matchMedia({
       '(min-width: 992px)': function () {
@@ -104,7 +102,7 @@ const SectionThird = () => {
             },
           })
           .fromTo(
-            section,
+            span,
             {
               backgroundImage:
                 'linear-gradient(243.71deg, rgba(26, 27, 29, 0.95) 4.24%, #0D1528 97.67%)',
@@ -133,7 +131,7 @@ const SectionThird = () => {
       <Image
         src={footerSm}
         srcSet={`${footerMd} 768w, ${footerLg} 992w, ${footerXl} 1200w, ${footer} 1440w`}
-        className="position-absolute z-index-1"
+        className="position-absolute z-index-1 section-third__img-js"
       />
       <Container>
         <SectionThirdTitle className="section-third__title-js">
