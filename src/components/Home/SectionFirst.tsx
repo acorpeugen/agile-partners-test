@@ -21,7 +21,11 @@ const ContentBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: calc(100vh - 255px);
+  min-height: calc(100vh - 124px);
+
+  @media (min-width: ${(props) => props.theme.breakpoint.up_992}) {
+    min-height: calc(100vh - 255px);
+  }
 `;
 
 const SectionFirst = () => {
