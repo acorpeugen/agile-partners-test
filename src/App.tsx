@@ -15,13 +15,9 @@ function App() {
     const preloader = document.querySelector('.preloader-js');
     const loader = document.querySelector('.loader-js');
 
-    const preloaderAnimation = gsap.timeline();
-
-    preloaderAnimation.to(
-      [preloader, loader],
-      { opacity: 0, duration: 1 },
-      '+=1.5'
-    );
+    gsap
+      .timeline()
+      .to([preloader, loader], { opacity: 0, duration: 1.5 }, '+=1.3');
   }, []);
 
   return (
