@@ -2,7 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ArrowDownStyled = styled.svg`
-  margin-bottom: 88px;
+  margin-bottom: 30px;
+
+  @media (min-width: ${(props) => props.theme.breakpoint.up_992}) {
+    margin-bottom: 88px;
+  }
 `;
 
 export interface ArrowDownSvgProps {
