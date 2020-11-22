@@ -5,7 +5,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 import { points } from './../../data';
-import map from './../../assets/svg/map.svg';
+import { map } from './../../assets/svg';
 
 import { Section } from './../Section';
 import { Container } from './../Container';
@@ -23,11 +23,11 @@ const Row = styled.div`
 
 const SectionStyled = styled(Section)`
   border: solid ${(props) => props.theme.colors.white} 16px;
-  min-height: calc(100vh - 130px);
+  min-height: calc(100vh - 62px);
   padding-top: 30px;
 
   ${Row} {
-    min-height: calc(100vh - 130px);
+    min-height: calc(100vh - 62px);
   }
 
   ${H2},
@@ -38,6 +38,14 @@ const SectionStyled = styled(Section)`
   @media (min-width: ${(props) => props.theme.breakpoint.up_992}) {
     border: solid ${(props) => props.theme.colors.white} 32px;
     padding-top: 66px;
+  }
+
+  @media (min-width: ${(props) => props.theme.breakpoint.up_1200}) {
+    min-height: calc(100vh - 130px);
+
+    ${Row} {
+      min-height: calc(100vh - 130px);
+    }
   }
 `;
 
@@ -85,21 +93,22 @@ const Tooltip = styled.span`
 
 const TooltipBox = styled.div`
   position: absolute;
+  display: none;
   z-index: 1;
 
   &:first-of-type {
     left: 53px;
-    bottom: 124px;
+    bottom: 120px;
   }
 
   &:nth-of-type(2) {
     left: 157px;
-    bottom: 227px;
+    bottom: 216px;
   }
 
   &:nth-of-type(3) {
     left: 239px;
-    bottom: 277px;
+    bottom: 261px;
   }
 
   &:nth-of-type(4) {
@@ -118,11 +127,39 @@ const TooltipBox = styled.div`
       bottom: -24px;
     }
   }
+
+  @media (min-width: ${(props) => props.theme.breakpoint.up_992}) {
+    display: block;
+  }
+
+  @media (min-width: ${(props) => props.theme.breakpoint.up_1200}) {
+    &:first-of-type {
+      left: 53px;
+      bottom: 124px;
+    }
+
+    &:nth-of-type(2) {
+      left: 157px;
+      bottom: 227px;
+    }
+
+    &:nth-of-type(3) {
+      left: 239px;
+      bottom: 277px;
+    }
+
+    &:nth-of-type(4) {
+      left: 50%;
+      bottom: calc(100% + 17px);
+    }
+  }
 `;
 
 const MapBox = styled.div`
-  position: absolute;
-  bottom: 25px;
+  @media (min-width: ${(props) => props.theme.breakpoint.up_992}) {
+    position: absolute;
+    bottom: 25px;
+  }
 `;
 
 const Map = styled.img`
@@ -150,11 +187,9 @@ const SectionSecond = () => {
     const subtitle = document.querySelector('.subtitle-js');
     const line = document.querySelector('.line-js');
     const map = document.querySelector('.map-js');
-    const tooltip = gsap.utils.toArray('.tooltip-js');
+    const tooltip = document.querySelectorAll('.tooltip-js');
 
-    ScrollTrigger.saveStyles(
-      '.title-js, .subtitle-js, .line-js, .map-js, .tooltip-js'
-    );
+    ScrollTrigger.saveStyles([title, subtitle, line, map, '.tooltip-js']);
     ScrollTrigger.matchMedia({
       '(min-width: 992px)': function () {
         gsap.set([title, subtitle, line, map, tooltip], {
@@ -167,32 +202,32 @@ const SectionSecond = () => {
               trigger: '.container-js',
               start: 'top 50%',
               end: 'bottom bottom',
-              scrub: 0.5,
+              scrub: true,
             },
           })
           .fromTo(
             title,
             { y: vh, fontSize: '3.125em' },
             {
-              duration: 4,
+              duration: 2,
+              y: 0,
               opacity: 1,
               fontSize: '2.5em',
-              y: 0,
             }
           )
           .fromTo(
             subtitle,
             { y: vh, fontSize: '1.875em' },
             {
+              duration: 2,
+              y: 0,
               opacity: 1,
               fontSize: '1.5625em',
-              y: 0,
-              duration: 4,
             },
-            '-=4'
+            '-=2'
           )
-          .fromTo([line, map], { y: 100 }, { opacity: 1, y: 0, duration: 2 })
-          .fromTo(tooltip, {}, { opacity: 1, stagger: 1 });
+          .fromTo([line, map], { y: 100 }, { duration: 1, opacity: 1, y: 0 })
+          .to(tooltip, { opacity: 1, duration: 1, stagger: 1 });
       },
     });
   }, []);

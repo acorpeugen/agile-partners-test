@@ -30,18 +30,19 @@ const ContentBox = styled.div`
 
 const SectionFirst = () => {
   useEffect(() => {
-    const sectionFirst = document.querySelector('.section-first-js');
+    const section = document.querySelector('.section-first-js');
     const logo = document.querySelector('.logo-js');
     const title = document.querySelector('.section-first__title-js');
     const subtitle = document.querySelector('.section-first__subtitle-js');
     const navLinks = gsap.utils.toArray('.nav-link-js');
     const arrowDown = document.querySelector('.arrow-down-js');
 
-    const sectionAnimation = gsap.timeline();
-
-    sectionAnimation
+    gsap.set([logo, title, subtitle, navLinks, arrowDown], { opacity: 0 });
+    gsap.set([logo, title, subtitle, arrowDown], { y: 100 });
+    gsap
+      .timeline()
       .fromTo(
-        sectionFirst,
+        section,
         {
           backgroundImage:
             'linear-gradient(243.7deg, rgba(255, 255, 255, 1) 4.24%, #fff 97.67%)',
@@ -49,40 +50,28 @@ const SectionFirst = () => {
         {
           backgroundImage:
             'linear-gradient(243.7deg, rgba(12, 81, 206, 0.82) 4.24%, #000 97.67%)',
-          duration: 0.5,
-          delay: 0.5,
         }
       )
-      .fromTo(
-        [logo, title],
-        { opacity: 0, y: 100 },
-        { opacity: 1, y: 0, duration: 1 }
-      )
-      .fromTo(
-        subtitle,
-        { opacity: 0, y: 100 },
-        { opacity: 1, y: 0, duration: 1 }
-      )
+      .to([logo, title], { duration: 0.5, opacity: 1, y: 0 })
+      .to(subtitle, { duration: 0.5, opacity: 1, y: 0 })
       .fromTo(
         navLinks,
-        { opacity: 0, x: '30px' },
+        { x: '30px' },
         {
           opacity: 1,
           x: 0,
-          stagger: 0.2,
-          duration: 0.2,
-          ease: 'Power4.EaseOut',
+          stagger: 0.1,
+          duration: 0.1,
         }
       )
-      .fromTo(
+      .to(
         arrowDown,
-        { opacity: 0, y: 100 },
         {
           opacity: 1,
           y: 0,
           duration: 0.5,
         },
-        '-=1.4'
+        '-=0.7'
       );
   }, []);
 
