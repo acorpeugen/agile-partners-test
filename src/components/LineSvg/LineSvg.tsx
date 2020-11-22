@@ -2,9 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Svg = styled.svg`
-  display: block;
+  display: none;
   max-width: 100%;
   height: auto;
+
+  @media (min-width: ${(props) => props.theme.breakpoint.up_992}) {
+    display: block;
+  }
 `;
 
 export interface LineSvgProps {
