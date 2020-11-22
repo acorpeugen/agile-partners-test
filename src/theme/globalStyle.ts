@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
+import { fluidFontSize } from './mixins';
 
 const GlobalStyle = createGlobalStyle`
   /**
@@ -30,23 +31,28 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    font-size: 3.75rem;
+    font-size: 60px;
+    ${fluidFontSize(36, 60)};
   }
 
   h2 {
     font-size: 3.125rem;
+    ${fluidFontSize(30, 50)};
   }
 
   h3 {
     font-size: 1.875rem;
+    ${fluidFontSize(24, 30)};
   }
 
   h4 {
-    font-size: 1.5rem;
+    font-size: 24px;
+    ${fluidFontSize(20, 24)};
   }
 
   h5 {
     font-size: 1.25rem;
+    ${fluidFontSize(18, 20)};
   }
 
   .text-center {
