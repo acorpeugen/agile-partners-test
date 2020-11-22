@@ -5,8 +5,10 @@ const ImageStyled = styled.img`
   position: fixed;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   object-fit: cover;
   z-index: -2;
 `;
