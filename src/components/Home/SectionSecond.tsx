@@ -22,9 +22,9 @@ const Row = styled.div`
 `;
 
 const SectionStyled = styled(Section)`
-  border: solid ${(props) => props.theme.colors.white} 32px;
+  border: solid ${(props) => props.theme.colors.white} 16px;
   min-height: calc(100vh - 130px);
-  padding-top: 66px;
+  padding-top: 30px;
 
   ${Row} {
     min-height: calc(100vh - 130px);
@@ -33,6 +33,11 @@ const SectionStyled = styled(Section)`
   ${H2},
   ${H3} {
     text-align: center;
+  }
+
+  @media (min-width: ${(props) => props.theme.breakpoint.up_992}) {
+    border: solid ${(props) => props.theme.colors.white} 32px;
+    padding-top: 66px;
   }
 `;
 
@@ -162,7 +167,7 @@ const SectionSecond = () => {
               trigger: '.container-js',
               start: 'top 50%',
               end: 'bottom bottom',
-              scrub: true,
+              scrub: 0.5,
             },
           })
           .fromTo(
