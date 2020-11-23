@@ -31,28 +31,23 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    font-size: 60px;
-    ${fluidFontSize(36, 60)};
+    ${fluidFontSize(60, 36, 60)};
   }
 
   h2 {
-    font-size: 3.125rem;
-    ${fluidFontSize(30, 50)};
+    ${fluidFontSize(30, 30, 50)};
   }
 
   h3 {
-    font-size: 1.875rem;
-    ${fluidFontSize(24, 30)};
+    ${fluidFontSize(24, 24, 30)};
   }
 
   h4 {
-    font-size: 24px;
-    ${fluidFontSize(20, 24)};
+    ${fluidFontSize(20, 20, 24)};
   }
 
   h5 {
-    font-size: 1.25rem;
-    ${fluidFontSize(18, 20)};
+    ${fluidFontSize(18, 18, 20)};
   }
 
   .text-center {

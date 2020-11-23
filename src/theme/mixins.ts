@@ -11,15 +11,20 @@
  * @author Proca Eugene <acorpeugen@gmail.com>
  */
 export function fluidFontSize(
+  defaultFontSize: number,
   minFontSize: number,
   maxFontSize: number,
-  minBreakpoint = 320,
-  maxBreakpoint = 992,
+  maxBreakpoint = 991,
   viewportWidth = 100
 ) {
   return `
-    @media (min-width: ${minBreakpoint}px) and (max-width: ${maxBreakpoint}px) {
-      font-size: calc(${minFontSize}px + (${maxFontSize} - ${minFontSize}) * ((${viewportWidth}vw - ${minBreakpoint}px) / (${maxBreakpoint} - ${minBreakpoint})))
+    @media only screen and (max-width: ${maxBreakpoint}px) {
+      font-size: calc(${minFontSize}px + (${maxFontSize} - ${minFontSize}) * ((${viewportWidth}vw) / (${maxBreakpoint})))
     }
+
+    @media (min-width: ${maxBreakpoint + 1}px) {
+      font-size: ${defaultFontSize}px
+    }
+
   `;
 }
